@@ -7,11 +7,17 @@ namespace mppi::models
     {
         xt::xtensor<float,2> v;
         xt::xtensor<float,2> w;
+
+        xt::xtensor<float,2> cv;
+        xt::xtensor<float,2> cw;
         
     void reset(unsigned int batch_size, unsigned int time_steps)
     {
         v = xt::zeros<float>({batch_size, time_steps});
         w = xt::zeros<float>({batch_size, time_steps});
+
+        cv = xt::zeros<float>({batch_size, time_steps});
+        cw = xt::zeros<float>({batch_size, time_steps});
     }
     };
 };

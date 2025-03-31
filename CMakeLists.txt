@@ -9,3 +9,5 @@ include_directories(include
 # set(SOURCE_FILES src/main.cpp)
 # add_executable(simple_example ${SOURCE_FILES})
 add_executable(test_xt src/models/test_xtensor.cpp)
+add_executable(test_std_cv src/models/test_std_condition.cpp)
+add_subdirectory(test)
