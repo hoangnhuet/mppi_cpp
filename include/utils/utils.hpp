@@ -15,7 +15,8 @@ class Twist
         angular = 0;
     }
 };
-class pose
+class Pose
 {
     float x,y,yaw;
 };
+typedef std::vector<Pose> Path; 

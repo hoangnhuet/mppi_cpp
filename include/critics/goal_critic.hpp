@@ -7,7 +7,7 @@ namespace mppi::critics
         public:
             GoalCritic();
             ~GoalCritic();
-            void score(CriticData &data) override;
+            void score(mppi::CriticData &data) override;
         protected:
             unsigned int power_{0};
             float weight_{0};

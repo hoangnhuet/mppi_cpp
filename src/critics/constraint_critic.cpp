@@ -5,8 +5,8 @@ namespace mppi::critics
     auto weight_ = Params().weight_;
     auto power_ = Params().power_;
     auto max_vel_ = Params().v_max;
-    auto min_vel_ = Params().v_min
-    void ConstrainCritic::score(CriticData &data)
+    auto min_vel_ = Params().v_min;
+    void ConstraintCritic::score(CriticData &data)
     {
         using xt::evaluation_strategy::immediate;
       

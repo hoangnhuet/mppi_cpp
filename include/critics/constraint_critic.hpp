@@ -9,7 +9,7 @@ namespace mppi::critics
         public:
             ConstraintCritic();
             ~ConstraintCritic();
-            void score(mppi::critics::CriticData &data) override;
+            void score(mppi::CriticData &data) override;
         protected:
             unsigned int power_{0};
             float weight_{0};

@@ -14,8 +14,8 @@ namespace mppi
         const models::State & state;
         const models::Trajectories & trajectories;
         const models::Path & path;
-        std::shared_ptr<MotionModel> motion_model;
         xt::xtensor<float, 1> & costs;
         float & model_dt;
+        std::shared_ptr<MotionModel> motion_model;
     };
 }
