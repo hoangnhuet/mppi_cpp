@@ -21,6 +21,8 @@ public:
     }
 
     void loadCritics();
+    void CriticManager::evalTrajectoriesScores(
+        CriticData &data) const;
 
 private:
     std::shared_ptr<Costmap2D> costmap_;

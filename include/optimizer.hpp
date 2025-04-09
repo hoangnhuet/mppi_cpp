@@ -33,7 +33,6 @@ namespace mppi
              */
             Twist evalControl(Pose &robot_pose, Twist &robot_speed, 
             Path &plan);
-            void setSpeedLimit(double speed_limit);
 
         protected:
             void optimize();
@@ -103,9 +102,9 @@ namespace mppi
             models::Path path_;
             xt::xtensor<float, 1> cost_;
             CriticData critic_data_ = {state_, trajectories_, path_, cost_, settings_.model_dt, motion_model_};
-
-            
-
+            Twist getControlFromSequenceAsTwist();
+            models::ControlSequence control_sequence_;
+            models::Trajectories generated_trajectories_;
 
 
     };

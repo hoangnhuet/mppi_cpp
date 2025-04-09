@@ -12,7 +12,7 @@ namespace mppi
         public:
             MotionModel();
             ~MotionModel();
-            virtual void predict(models::State& state, const models::ControlSequence &controls, float dt);
+            virtual void predict(models::State& state);
             virtual void applyConstraint(models::ControlSequence &);
             virtual bool isHolonomic();
 
@@ -25,5 +25,14 @@ namespace mppi
             {
                 return false;
             }
+            void predict(models::State& state, const models::ControlSequence &controls, float dt) override
+            {
+            using namespace xt::placeholders;  // NOLINT
+            xt::noalias(xt::view(state.v, xt::all(), xt::range(1, _))) =
+            xt::view(state.cv, xt::all(), xt::range(0, -1));
+
+            xt::noalias(xt::view(state.w, xt::all(), xt::range(1, _))) =
+            xt::view(state.cw, xt::all(), xt::range(0, -1));
+            }
     };
-};
+}

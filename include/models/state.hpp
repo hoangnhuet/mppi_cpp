@@ -10,6 +10,9 @@ namespace mppi::models
 
         xt::xtensor<float,2> cv;
         xt::xtensor<float,2> cw;
+
+        Twist speed;
+        Pose pose;
         
     void reset(unsigned int batch_size, unsigned int time_steps)
     {
