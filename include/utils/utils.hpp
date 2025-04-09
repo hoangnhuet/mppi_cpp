@@ -18,6 +18,7 @@ class Twist
 };
 class Pose
 {
-    float x,y,yaw;
+    public:
+        float x,y,yaw;
 };
 typedef std::vector<Pose> Path; 

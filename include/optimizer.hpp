@@ -34,6 +34,7 @@ namespace mppi
             Twist evalControl(Pose &robot_pose, Twist &robot_speed, 
             Path &plan);
 
+
         protected:
             void optimize();
             /**
@@ -54,7 +55,7 @@ namespace mppi
             /**
              * @brief apply vehicle constraints to control sequence
              */
-            void applyControlSequenceCOnstraints();
+            void applyControlSequenceConstraints();
             /**
              * @brief update velocity in state
              */
@@ -90,6 +91,7 @@ namespace mppi
              * using softmax function
              */
             void updateControlSequence();
+            Twist Optimizer::getControlFromSequenceAsTwist();
         protected:
             models::OptimizerSettings settings_;
             std::shared_ptr<MotionModel> motion_model_;
